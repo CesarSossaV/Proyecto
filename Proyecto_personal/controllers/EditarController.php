@@ -72,14 +72,14 @@ class editarController{
         
         <div class="form-group">
         <label for="comment">Caracteristicas:</label>
-        <textarea value="'.$Respuesta["caracteristicas"].'" class="form-control" rows="5" name="txtDescripcionReg"   id="txtDescripcionReg"></textarea>
+        <textarea  class="form-control" rows="5" name="txtDescripcionReg"   id="txtDescripcionReg">'.$Respuesta["caracteristicas"].'</textarea>
       </div>
       
       <div class="form-group">        
         <div class="col-sm-offset-2 col-sm-10">
           <button type="submit" class="btn btn-default" id="txtActualizarEq" name="txtActualizarEq">Actualizar</button>
         </div>
-        '.$Respuesta["caracteristicas"].'
+        
       </div>';
     }
 
