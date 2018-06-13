@@ -135,6 +135,27 @@ class Datos extends Conexion{
         return $stmt->fetch();
 
     }
+    //Actualizar Equipo
+    public function actualizarEqModel($datosModel,$tabla){
+        $stmt=Conexion::conectar()->prepare("UPDATE $tabla
+                SET CodigoFijo = :acd
+                ,serial = :Serial
+                ,caracteristicas = :Caracteristicas
+                ,marca = :Marca
+                ,modelo = :Modelo
+                ,idLab = :IdLab
+                WHERE CodigoFijo = :acd");
+        $stmt->bindparam(":acd",$datosModel["acd"],pdo::PARAM_STR);
+        $stmt->bindparam(":Serial",$datosModel["serial"],pdo::PARAM_STR);
+        $stmt->bindparam(":Caracteristicas",$datosModel["descripcion"],pdo::PARAM_STR);
+        $stmt->bindparam(":Marca",$datosModel["marca"],pdo::PARAM_STR);
+        $stmt->bindparam(":Modelo",$datosModel["modelo"],pdo::PARAM_STR);
+        $stmt->bindparam(":IdLab",$datosModel["idLab"],pdo::PARAM_STR);      
+        if($stmt->execute()){
+            return "success";
+        }
+
+    }
 
 }
 

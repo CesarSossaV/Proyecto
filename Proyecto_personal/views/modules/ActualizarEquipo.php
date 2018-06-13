@@ -6,6 +6,8 @@
 
     $ActualizarEquipo = new editarController();
     $ActualizarEquipo->EditarEquipoController();
+
+    $ActualizarEquipo->actualizarEqController();
     ?>
     
   </form>
