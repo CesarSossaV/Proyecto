@@ -2,7 +2,7 @@
 ob_start();
 ?>
 <h1>Ingreso </h1>
-<h2>Inico de Sesion</h2>
+<h2>Inicio de Sesion</h2>
 
 <div class="container">
   <form method="post" class="form-horizontal col-xs-6">

@@ -33,7 +33,7 @@ if(!$_SESSION["validar"]){
       <tr>
         <th>ACD</th>
         <th>Seria</th>
-        <th>Ubicaion</th>
+        <th>Ubicacion</th>
         <th>Monitor</th>
         <th>Detalle</th>
         <th>Tarea</th>

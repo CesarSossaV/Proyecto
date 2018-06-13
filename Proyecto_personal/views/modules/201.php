@@ -4,7 +4,7 @@ if(!$_SESSION["validar"]){
   header("location:index.php?action=inicio");
 }
 ?>
-<h1>Laboratorio 201</h1>
+<h1>Laboratorios 201</h1>
 
 <div class="container">
                                                                                        

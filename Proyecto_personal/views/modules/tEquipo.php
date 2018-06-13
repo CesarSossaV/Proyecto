@@ -40,7 +40,7 @@ if(!$_SESSION["validar"]){
     </div>
       
        <div class="form-group">
-      <label class="control-label col-sm-2">Fecha Adquicicion:</label>
+      <label class="control-label col-sm-2">Fecha Adquisicion:</label>
       <div class="col-sm-10">          
         <input type="date" class="form-control" id="txtFechaReg" placeholder="Ingrese el Fecha" name="txtFechaReg">
       </div>
