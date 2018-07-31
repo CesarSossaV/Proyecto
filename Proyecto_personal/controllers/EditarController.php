@@ -23,15 +23,21 @@ class editarController{
         <div class="form-group">
         <label class="control-label col-sm-2" >ACD:</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control" id="txtACDAct" value="'.$Respuesta["CodigoFijo"].'" placeholder="ACD De Item" name="txtACDAct">
+          <input type="text" class="form-control" id="txtACDAct" value='.$Respuesta["CodigoFijo"].'  placeholder="ACD De Item" name="txtACDAct">
         </div>
       </div>
         
+        <div class="form-group">
+        <label class="control-label col-sm-2">Serial:</label>
+        <div class="col-sm-10">          
+          <input type="text" class="form-control" id="txtIdlAct"  value='.$Respuesta["idEquipo"].'  placeholder="Ingrese el Serial" name="txtIdAct">
+        </div>
+      </div>
         
       <div class="form-group">
         <label class="control-label col-sm-2">Serial:</label>
         <div class="col-sm-10">          
-          <input type="text" class="form-control" id="txtSerialAct"  value="'.$Respuesta["serial"].'" placeholder="Ingrese el Serial" name="txtSerialAct">
+          <input type="text" class="form-control" id="txtSerialAct"  value='.$Respuesta["serial"].'  placeholder="Ingrese el Serial" name="txtSerialAct">
         </div>
       </div>
         
@@ -39,14 +45,14 @@ class editarController{
         <div class="form-group">
         <label class="control-label col-sm-2">Marca:</label>
         <div class="col-sm-10">          
-          <input type="text" class="form-control" id="txtMarcaAct"  value="'.$Respuesta["marca"].'" placeholder="Ingrese la Marca" name="txtMarcaAct">
+          <input type="text" class="form-control" id="txtMarcaAct"  value='.$Respuesta["marca"].'  placeholder="Ingrese la Marca" name="txtMarcaAct">
         </div>
       </div>
         
         <div class="form-group">
         <label class="control-label col-sm-2">Modelo:</label>
         <div class="col-sm-10">          
-          <input type="text" class="form-control" id="txtModeloAct"  value="'.$Respuesta["modelo"].'" placeholder="Ingrese el Modelo" name="txtModeloAct">
+          <input type="text" class="form-control" id="txtModeloAct"  value= '.$Respuesta["modelo"].'  placeholder="Ingrese el Modelo" name="txtModeloAct">
         </div>
       </div>
         
@@ -81,20 +87,21 @@ class editarController{
 
     public function actualizarEqController(){
 
-      if(isset($_POST["txtACDAct"])){
-              $datosController=array("acd"=>$_POST["txtACDAct"],
-              "serial"=>$_POST["txtSerialAct"],
-              "marca"=>$_POST["txtMarcaAct"],
-              "modelo"=>$_POST["txtModeloAct"],
-              "descripcion"=>$_POST["txtDescripcionAct"],
-              "idLab"=>$_POST["txtidLabAct"]);
-      $respuesta=Datos::registroEquipoModel($datosController,"Equipo");
+      if(isset($_POST["txtIdAct"])){
+              $datosController=array(
+                  "id"=>$_POST["txtIdAct"],
+                  "serial"=>$_POST["txtSerialAct"],
+                  "marca"=>$_POST["txtMarcaAct"],
+                  "modelo"=>$_POST["txtModeloAct"],
+                  "descripcion"=>$_POST["txtDescripcionAct"],
+                  "idLab"=>$_POST["txtidLabAct"]);
+      $respuesta=Datos::actualizarEqModel($datosController,"Equipo");
 
       if($respuesta=="success"){
-      echo "Registro Exitoso";
+      echo "Actualizado";
       }
       else{
-      echo "Error al Registrar";
+      echo "Error ";
       }
       }
     }

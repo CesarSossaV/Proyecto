@@ -112,7 +112,6 @@ class Datos extends Conexion{
             $stmt->execute();
             return $stmt->fetchAll();
         }
-        $stmt->close();
         
     }
     
@@ -138,19 +137,19 @@ class Datos extends Conexion{
     //Actualizar Equipo
     public function actualizarEqModel($datosModel,$tabla){
         $stmt=Conexion::conectar()->prepare("UPDATE $tabla
-                SET CodigoFijo = :acd
-                ,serial = :Serial
+                SET 
+                serial = :Serial
                 ,caracteristicas = :Caracteristicas
                 ,marca = :Marca
                 ,modelo = :Modelo
                 ,idLab = :IdLab
-                WHERE CodigoFijo = :acd");
-        $stmt->bindparam(":acd",$datosModel["acd"],pdo::PARAM_STR);
+                WHERE idEquipo = :ID");
+        $stmt->bindparam(":ID",$datosModel["id"],pdo::PARAM_STR);
         $stmt->bindparam(":Serial",$datosModel["serial"],pdo::PARAM_STR);
         $stmt->bindparam(":Caracteristicas",$datosModel["descripcion"],pdo::PARAM_STR);
         $stmt->bindparam(":Marca",$datosModel["marca"],pdo::PARAM_STR);
         $stmt->bindparam(":Modelo",$datosModel["modelo"],pdo::PARAM_STR);
-        $stmt->bindparam(":IdLab",$datosModel["idLab"],pdo::PARAM_STR);      
+        $stmt->bindparam(":IdLab",$datosModel["idLab"],pdo::PARAM_INT);
         if($stmt->execute()){
             return "success";
         }
