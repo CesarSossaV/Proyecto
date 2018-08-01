@@ -24,7 +24,7 @@ ob_start();
       <div class="col-sm-offset-2 col-sm-10">
         <input type="submit" class="btn btn-default" name="btnIngresar" id="btnIngresar" value="Iniciar">
       </div>
-      <buttom type="button" class="btn btn-default"><a href="index.php?action=RegistroUsuario">Registro</a></buttom>
+      <buttom type="button" class="btn btn-default"><a href="index.php?action=RegistroUsuario">Nuevo Usuario</a></buttom>
     </div>
 
      

@@ -63,6 +63,6 @@ if(!$_SESSION["validar"]){
    $finalizar->finalizarTareaController();
    ?>
   </div>
-      <buttom type="button" class="btn btn-default"><a href="index.php?action=rTarea">Registro</a></buttom>
+      <buttom type="button" class="btn btn-default"><a href="index.php?action=rTarea">Nueva Tarea</a></buttom>
     </div>
 </div>
